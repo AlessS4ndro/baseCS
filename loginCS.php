@@ -25,6 +25,6 @@
 	$nota = $matches1[1][0];
 	//echo $result;
 	echo "nota: ".$nota;
-	
+	 
 	
 ?>

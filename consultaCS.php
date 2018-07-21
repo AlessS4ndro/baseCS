@@ -20,5 +20,4 @@
 	//echo $result;
 	echo "nota: ".$nota;
 	
-	
 ?>
