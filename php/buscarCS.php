@@ -1,6 +1,10 @@
 <?php
-  $tipo=$_GET["clave"] ;echo "el tipo  es: " . $tipo;
-  $clave=$_GET["inputBuscar"];echo "la clave es: ".$clave;
+$tipo=$_POST["clave"] ;
+$clave=$_POST["inputBuscar"];
+//$tipo=$_POST["tipo"] ;echo "el tipo  es: " . $tipo;
+//$clave=$_POST["clave"];echo "la clave es: ".$clave;
+  //$tipo ="nombre";
+  //$clave="Apaza";
   $tabla= "victimasCS";
   // descomentar linea abajo para subir al hosting
   //$conection = mysqli_connect('sql110.260mb.net','n260m_22128908','MERINO','n260m_22128908_baseCS');

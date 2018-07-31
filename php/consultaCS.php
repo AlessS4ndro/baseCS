@@ -1,20 +1,9 @@
 <?php
 	//	INICIAMOS LA CONEXION
-  ?>
-  <!DOCTYPE html>
-  <html lang="en">
-  <head>
-    <meta charset ="UTF-8">
-    <title>VictimasCS</title>
-    <link rel="stylesheet" href="css/estilos.css">
-    <script src="../javascript/funciones.js"></script>
-  </head>
-  <body>
-    <?php
     if($_GET["formBuscar"]!="enviar"){
       ?>
       <nav id="campoBusqueda">
-        <form id ="formulario"action ="buscarCS.php" method="get">
+        <form id ="formulario" action ="buscarCS.php" method="post">
           <label for ="inputBuscar">Buscar victima!!</label>
           <input type="text" placeholder ="palabra magica!!" name="inputBuscar">
             <legend>Buscar por:</legend>
@@ -25,7 +14,7 @@
             <label>
                 <input type="radio" name="clave" value="DNI"> DNI
             </label>
-            <input type="submit" value="enviar" name="botonEnviar">
+            <input type="submit" value="enviar" name="botonEnviar" >
         </form>
       </nav>
       <?php
@@ -62,7 +51,6 @@
     }
     echo "</table>";
     mysqli_close($conection);
-
+    echo "<script>alert('jejejejej');</script>";
+    echo '<script src="../javascript/funciones.js"></script>';
 ?>
-</body>
-</html>

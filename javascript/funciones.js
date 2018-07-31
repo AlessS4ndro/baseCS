@@ -1,4 +1,4 @@
-addEventListener('load',inicializarEventos,false);
+//addEventListener('load',inicializarEventos,false);
 
 var tipo;
 var boton;
@@ -15,13 +15,27 @@ function inicializarEventos()
     if(radios[x].checked){
       tipo=radios[x].value;
       alert("el tipo es: "+tipo);
+      break;
     }
   }
 }
 function presionarEnlace(e)
 {
+  boton=document.getElementsByName("botonEnviar")[0];
+
+  var radios=document.getElementsByName("clave");
+  for (var x=0;x<radios.length;x++){
+    alert("entro al for");
+    if(radios[x].checked){
+      tipo=radios[x].value;
+      alert("el tipo es: "+tipo);
+      break;
+    }
+  }
+  alert("se ejecuto el break");
   formulario = document.getElementById("formulario");
-  e.preventDefault();
+  //e.preventDefault();
+  alert("prevent demierda");
   var url=formulario.getAttribute("action");
   alert ("la url es: "+url);
   mostrarDatos(url);
@@ -34,10 +48,10 @@ function mostrarDatos(url)
   palabraMagica = document.getElementsByName("inputBuscar")[0];
   alert("palabramagica: "+palabraMagica.value);
   //alert("el tipo es: "+tipo.value);
-  var params = "clave="+palabraMagica.value+"&tipo="+"nombre"+"&botonEnviar="+"enviar";
+  var params = "clave="+palabraMagica.value+"&tipo="+tipo+"&botonEnviar="+boton.value;
   alert("el parametro es: "+params);
-  http.open('GET', url, true);
-  http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+  http.open('POST', url, true);
+//  http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
   http.send(params);
 }
 
@@ -51,6 +65,4 @@ function procesarEventos()
     campoAjax.innerHTML= "cargando....";
   }
 
-  //inicializarEventos();
-  //alert(botonIngresar.value);
 }
